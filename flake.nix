@@ -6,7 +6,7 @@
   };
 
   outputs = { self, nixpkgs, utils }:
-    utils.lib.eachSystem [ utils.lib.system.x86_64-linux ] (system:
+    utils.lib.eachSystem [ utils.lib.system.x86_64-linux utils.lib.system.aarch64-darwin ] (system:
       let 
         pkgs = nixpkgs.legacyPackages.${system};
       in {
